@@ -70,11 +70,10 @@ RUN cd /usr/share/nginx/ && tar xvf latest.tar.gz && rm latest.tar.gz
 RUN mv /usr/share/nginx/html/5* /usr/share/nginx/wordpress
 RUN rm -rf /usr/share/nginx/www
 RUN mv /usr/share/nginx/wordpress /usr/share/nginx/www
-RUN rm -rf  /usr/share/nginx/www/wp-content
 
 # Copy wp-config file and wp-content
 COPY ./wp-config.php /usr/share/nginx/www/
-ADD ./wp-content /usr/share/nginx/www/
+COPY ./wp-content /usr/share/nginx/www/wp-content/
 RUN chown -R www-data:www-data /usr/share/nginx/www
 
 # Wordpress Initialization and Startup Script
