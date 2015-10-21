@@ -1,26 +1,18 @@
-# docker-wordpress-nginx
+#docker-wordpress-nginx
 
 A Dockerfile that installs the latest wordpress, nginx, php-apc and php-fpm.
-
-NB: A big thanks to [jbfink](https://github.com/jbfink/docker-wordpress) who did most of the hard work on the wordpress parts!
-
-You can check out his [Apache version here](https://github.com/jbfink/docker-wordpress).
 
 ## Installation
 
 The easiest way to get this docker image installed is to pull the latest version
 from the Docker registry:
 
-```bash
-$ docker pull eugeneware/docker-wordpress-nginx
-```
-
 If you'd like to build the image yourself then:
 
 ```bash
-$ git clone https://github.com/eugeneware/docker-wordpress-nginx.git
+$ git clone git@github.com:frontfoot/docker-wordpress-nginx.git
 $ cd docker-wordpress-nginx
-$ sudo docker build -t="eugeneware/docker-wordpress-nginx" .
+$ sudo docker build -t="frontfoot/docker-wordpress-nginx" .
 ```
 
 ## Usage
@@ -28,7 +20,7 @@ $ sudo docker build -t="eugeneware/docker-wordpress-nginx" .
 To spawn a new instance of wordpress on port 80.  The -p 80:80 maps the internal docker port 80 to the outside port 80 of the host machine.
 
 ```bash
-$ sudo docker run -p 80:80 --name docker-wordpress-nginx -d eugeneware/docker-wordpress-nginx
+$ sudo docker run -p 80:80 --name docker-wordpress-nginx -d frontfoot/docker-wordpress-nginx
 ```
 
 Start your newly created docker.
