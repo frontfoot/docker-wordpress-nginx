@@ -72,7 +72,7 @@ RUN mv /usr/share/nginx/wordpress /usr/share/nginx/www
 RUN rm -rf  /usr/share/nginx/www/wp-content
 
 # Copy wp-config file and wp-content
-COPY ./wp-config.php.staging.php /usr/share/nginx/www/wp-config.php
+COPY ./wp-config.php /usr/share/nginx/www/
 COPY ./wp-content /usr/share/nginx/www/
 RUN chown -R www-data:www-data /usr/share/nginx/www
 
