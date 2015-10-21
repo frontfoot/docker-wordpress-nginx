@@ -72,8 +72,8 @@ RUN mv /usr/share/nginx/wordpress /usr/share/nginx/www
 RUN chown -R www-data:www-data /usr/share/nginx/www
 
 # Copy wp-config file and wp-content
-COPY ./wp-config.php.staging.php /usr/share/nginx/www/wp-config.php
-COPY ./wp-content /usr/share/nginx/www/wp-content
+COPY ../wp-config.php.staging.php /usr/share/nginx/www/wp-config.php
+COPY ../wp-content /usr/share/nginx/www/wp-content
 
 # Wordpress Initialization and Startup Script
 ADD ./start.sh /start.sh
