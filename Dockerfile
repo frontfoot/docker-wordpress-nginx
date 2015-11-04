@@ -50,7 +50,7 @@ RUN sed -i -e"s/#\s*gzip_proxied any/gzip_proxied any/" /etc/nginx/nginx.conf
 RUN sed -i -e"s/#\s*gzip_comp_level 6/gzip_comp_level 6/" /etc/nginx/nginx.conf
 RUN sed -i -e"s/#\s*gzip_buffers 16 8k/gzip_buffers 16 8k/" /etc/nginx/nginx.conf
 RUN sed -i -e"s/#\s*gzip_http_version 1.1/gzip_http_version 1.1/" /etc/nginx/nginx.conf
-RUN sed -i -e"s/#\s*gzip_types(\S*)/gzip_types $1/" /etc/nginx/nginx.conf
+RUN sed -i -e"s/#\s*gzip_types(.*)/gzip_types $1/" /etc/nginx/nginx.conf
 RUN echo "daemon off;" >> /etc/nginx/nginx.conf
 
 # php-fpm config
