@@ -45,6 +45,12 @@ RUN apt-get -y install \
 # nginx config
 RUN sed -i -e"s/keepalive_timeout\s*65/keepalive_timeout 2/" /etc/nginx/nginx.conf
 RUN sed -i -e"s/keepalive_timeout 2/keepalive_timeout 2;\n\tclient_max_body_size 100m/" /etc/nginx/nginx.conf
+RUN sed -i -e"s/#\s*gzip_vary on/gzip_vary on/" /etc/nginx/nginx.conf
+RUN sed -i -e"s/#\s*gzip_proxied any/gzip_proxied any/" /etc/nginx/nginx.conf
+RUN sed -i -e"s/#\s*gzip_comp_level 6/gzip_comp_level 6/" /etc/nginx/nginx.conf
+RUN sed -i -e"s/#\s*gzip_buffers 16 8k/gzip_buffers 16 8k/" /etc/nginx/nginx.conf
+RUN sed -i -e"s/#\s*gzip_http_version 1.1/gzip_http_version 1.1/" /etc/nginx/nginx.conf
+RUN sed -i -e"s/#\s*gzip_types(\S*)/gzip_types $1/" /etc/nginx/nginx.conf
 RUN echo "daemon off;" >> /etc/nginx/nginx.conf
 
 # php-fpm config
