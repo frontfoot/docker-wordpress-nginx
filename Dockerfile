@@ -94,6 +94,12 @@ RUN cd /usr/src && \
     --lock-path=/var/run/nginx.lock \
     --error-log-path=/var/log/nginx/error.log \
     --http-log-path=/var/log/nginx/access.log \
+    --with-http_addition_module \
+    --with-http_sub_module \
+    --with-http_dav_module \
+    --with-http_random_index_module \
+    --with-http_stub_status_module \
+    --with-http_auth_request_module \
     --with-http_ssl_module \
     --with-http_realip_module \
     --with-http_flv_module \
