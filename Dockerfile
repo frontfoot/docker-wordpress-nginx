@@ -121,6 +121,7 @@ RUN cd /usr/src && \
 # ===================
 
 # nginx config
+COPY ./nginx.conf.default /etc/nginx/
 RUN sed -i -e"s/keepalive_timeout\s*65/keepalive_timeout 2/" /etc/nginx/nginx.conf
 RUN sed -i -e"s/keepalive_timeout\s*2/keepalive_timeout 2;\n\tclient_max_body_size 100m/" /etc/nginx/nginx.conf
 RUN sed -i -e"s/#\s*gzip_vary\s*on/gzip_vary on/" /etc/nginx/nginx.conf
