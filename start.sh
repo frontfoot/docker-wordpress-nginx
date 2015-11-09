@@ -19,7 +19,7 @@ if ( count( \$plugins ) === 0 ) {
 }
 ENDL
 
-chown www-data:www-data /usr/share/nginx/www/wp-config.php
+chown -R www-data:www-data /usr/share/nginx/www
 
 # start all the services
 /usr/local/bin/supervisord -n
