@@ -18,6 +18,7 @@ if ( count( \$plugins ) === 0 ) {
 }
 ENDL
 
+groupadd -g 501 www
 useradd -u 501 -g 501 www
 
 chown -R www:www /usr/share/nginx/www
