@@ -43,6 +43,7 @@ RUN apt-get -y install \
   php5-xsl
 
 # nginx config
+RUN sed -i -e"s/user\s*www-data/user www/" /etc/nginx/nginx.conf
 RUN sed -i -e"s/keepalive_timeout\s*65/keepalive_timeout 2/" /etc/nginx/nginx.conf
 RUN sed -i -e"s/keepalive_timeout\s*2/keepalive_timeout 2;\n\tclient_max_body_size 100m/" /etc/nginx/nginx.conf
 RUN sed -i -e"s/#\s*gzip_vary\s*on/gzip_vary on/" /etc/nginx/nginx.conf
