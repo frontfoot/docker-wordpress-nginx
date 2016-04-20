@@ -59,7 +59,6 @@ RUN sed -i -e "s/;cgi.fix_pathinfo=1/cgi.fix_pathinfo=0/g" /etc/php5/fpm/php.ini
 RUN sed -i -e "s/upload_max_filesize\s*=\s*2M/upload_max_filesize = 100M/g" /etc/php5/fpm/php.ini
 RUN sed -i -e "s/post_max_size\s*=\s*8M/post_max_size = 100M/g" /etc/php5/fpm/php.ini
 RUN sed -i -e "s/;daemonize\s*=\s*yes/daemonize = no/g" /etc/php5/fpm/php-fpm.conf
-RUN sed -i -e "s/;log_level\s*=\s*notice/log_level = debug/g" /etc/php5/fpm/php-fpm.conf
 RUN sed -i -e "s/user\s*=\s*www-data/user = www/" /etc/php5/fpm/pool.d/www.conf
 RUN sed -i -e "s/group\s*=\s*www-data/group = www/" /etc/php5/fpm/pool.d/www.conf
 RUN sed -i -e "s/listen.owner\s*=\s*www-data/listen.owner = www/" /etc/php5/fpm/pool.d/www.conf
